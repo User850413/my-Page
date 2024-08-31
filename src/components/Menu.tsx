@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useState } from "react";
+import { ReactNode, useRef, useState } from 'react';
 
 interface MenuProps {
   openMenu: ReactNode;
@@ -17,23 +17,18 @@ function Menu({ openMenu, menuItems, gap = 10 }: MenuProps) {
 
   return (
     <>
-      {menuOn && (
-        <div className="absolute inset-0 bg-opacity-0" onClick={handleMenu} />
-      )}
-      <div className="relative w-fit">
-        <div ref={menuItem} onClick={handleMenu} className="cursor-pointer">
+      {menuOn && <div className='absolute inset-0 bg-opacity-0' onClick={handleMenu} />}
+      <div className='relative w-fit'>
+        <div ref={menuItem} onClick={handleMenu} className='cursor-pointer'>
           {openMenu}
         </div>
         {menuOn && (
           <ul
-            className="absolute w-max flex flex-col items-center defaultShadow rounded-[5px] p-[12px_8px] bg-bright top-full left-1/2 transform -translate-x-1/2"
+            className='defaultShadow absolute left-1/2 top-full flex w-max -translate-x-1/2 transform flex-col items-center rounded-[5px] bg-bright p-[12px_8px]'
             style={{ top: `calc(100% + ${gap}px)` }}
           >
             {menuItems.map((item, index) => (
-              <li
-                key={index}
-                className="p-[8px] cursor-default border-b-[1px] border-b-middle"
-              >
+              <li key={index} className='cursor-default border-b-[1px] border-b-middle p-[8px]'>
                 {item}
               </li>
             ))}
