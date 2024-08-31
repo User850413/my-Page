@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Main from "./pages/main";
 import Projects from "./pages/projects";
-import Connections from "./pages/connections";
+import Contact from "./pages/contact";
 import Layout from "./layout/Layout";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Main />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/connections" element={<Connections />} />
+          <Route path="/connections" element={<Contact />} />
         </Route>
       </Routes>
     </>
@@ -19,4 +19,3 @@ function App() {
 }
 
 export default App;
-
