@@ -1,7 +1,9 @@
 import { useLocation, useNavigate } from 'react-router-dom';
+
 import ico_home from '../assets/icons/ico_home.svg';
-import ico_wheel from '../assets/icons/ico_wheel.svg';
 import ico_menu from '../assets/icons/ico_menu.svg';
+import ico_wheel from '../assets/icons/ico_wheel.svg';
+import Drawer from './Drawer';
 import Menu from './Menu';
 
 const MENUS: { label: string; url: string }[] = [
@@ -11,7 +13,7 @@ const MENUS: { label: string; url: string }[] = [
 
 const MenuButton = ({ buttonText, isNow }: { buttonText: string; isNow: boolean }) => {
   return (
-    <button disabled={isNow} className={`min-w-[104px] rounded-[5px] p-[13px_17px] text-[16px] ${isNow ? 'bg-darker text-bright' : 'hover:bg-middleDarker bg-middle'}`}>
+    <button disabled={isNow} className={`min-w-[104px] rounded-[5px] p-[13px_17px] text-[16px] ${isNow ? 'bg-darker text-bright' : 'bg-middle hover:bg-middleDarker'}`}>
       {buttonText}
     </button>
   );
@@ -22,11 +24,11 @@ function Header() {
   const { pathname } = useLocation();
 
   return (
-    <div className='defaultShadow tablet:h-[80px] tablet:px-[80px] flex h-[60px] items-center justify-between bg-bright px-[40px]'>
+    <div className='defaultShadow flex h-[60px] items-center justify-between bg-bright px-[40px] tablet:h-[80px] tablet:px-[80px]'>
       <button onClick={() => navigate('/')}>
         <img src={ico_home} alt='메인으로' />
       </button>
-      <ul className='tablet:flex hidden items-center gap-[40px]'>
+      <ul className='hidden items-center gap-[40px] tablet:flex'>
         {MENUS.map((menu, index) => (
           <li key={index} onClick={() => navigate(menu.url)}>
             <MenuButton buttonText={menu.label} isNow={pathname === menu.url} />
@@ -37,7 +39,15 @@ function Header() {
         </li>
       </ul>
       <button className='tablet:hidden'>
-        <img src={ico_menu} alt='더보기메뉴' />
+        <Drawer>
+          <Drawer.Trigger>
+            <img src={ico_menu} alt='더보기메뉴' />
+          </Drawer.Trigger>
+          <Drawer.Body direction='right'>
+            <Drawer.Item></Drawer.Item>
+            <Drawer.Item></Drawer.Item>
+          </Drawer.Body>
+        </Drawer>
       </button>
     </div>
   );
