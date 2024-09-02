@@ -5,7 +5,7 @@
 body {
   background-color: #ffffff;
   font-family: 'Pretendard';
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .difference {
