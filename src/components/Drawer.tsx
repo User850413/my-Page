@@ -51,7 +51,7 @@ const Item = ({ children, onClick }: DrawerItemProps) => {
   const { toggleDrawer } = useContext(DrawerContext);
   return (
     <li
-      className={`w-full border-b-[1px] border-b-middle py-[15px] text-center ${onClick ? 'cursor-pointer' : 'cursor-default'}`}
+      className={`flex w-full justify-center border-b-[1px] border-b-middle py-[15px] ${onClick ? 'cursor-pointer' : 'cursor-default'}`}
       onClick={() => {
         if (onClick) onClick();
         toggleDrawer();
