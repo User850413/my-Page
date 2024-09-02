@@ -11,9 +11,9 @@ const MENUS: { label: string; url: string }[] = [
   { label: '연락처', url: '/contact' },
 ];
 
-const MenuButton = ({ buttonText, isNow }: { buttonText: string; isNow: boolean }) => {
+const MenuButton = ({ buttonText, isNow, onClick }: { buttonText: string; isNow: boolean; onClick: () => void }) => {
   return (
-    <button disabled={isNow} className={`min-w-[104px] rounded-[5px] p-[13px_17px] text-[16px] ${isNow ? 'bg-darker text-bright' : 'bg-middle hover:bg-middleDarker'}`}>
+    <button onClick={onClick} disabled={isNow} className={`min-w-[104px] rounded-[5px] p-[13px_17px] text-[16px] ${isNow ? 'bg-darker text-bright' : 'bg-middle hover:bg-middleDarker'}`}>
       {buttonText}
     </button>
   );
@@ -30,25 +30,28 @@ function Header() {
       </button>
       <ul className='hidden items-center gap-[40px] tablet:flex'>
         {MENUS.map((menu, index) => (
-          <li key={index} onClick={() => navigate(menu.url)}>
-            <MenuButton buttonText={menu.label} isNow={pathname === menu.url} />
+          <li key={index}>
+            <MenuButton buttonText={menu.label} isNow={pathname === menu.url} onClick={() => navigate(menu.url)} />
           </li>
         ))}
         <li className='h-fit w-fit'>
           <Menu openMenu={<img src={ico_wheel} alt='메뉴' className='h-[40px] w-[40px]' />} menuItems={[]} />
         </li>
       </ul>
-      <button className='tablet:hidden'>
+      <span className='tablet:hidden'>
         <Drawer>
           <Drawer.Trigger>
             <img src={ico_menu} alt='더보기메뉴' />
           </Drawer.Trigger>
           <Drawer.Body direction='right'>
-            <Drawer.Item></Drawer.Item>
-            <Drawer.Item></Drawer.Item>
+            {MENUS.map((menu, index) => (
+              <Drawer.Item key={index} onClick={() => navigate(menu.url)}>
+                {menu.label}
+              </Drawer.Item>
+            ))}
           </Drawer.Body>
         </Drawer>
-      </button>
+      </span>
     </div>
   );
 }

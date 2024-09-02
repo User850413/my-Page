@@ -6,6 +6,10 @@ interface DrawerBodyProps extends PropsWithChildren {
   direction: 'left' | 'right';
 }
 
+interface DrawerItemProps extends PropsWithChildren {
+  onClick?: () => void;
+}
+
 const DrawerContext = createContext({ isOpen: false, toggleDrawer: () => {} });
 function Drawer({ children }: PropsWithChildren) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -14,11 +18,7 @@ function Drawer({ children }: PropsWithChildren) {
     setIsOpen((prev) => !prev);
   };
 
-  return (
-    <DrawerContext.Provider value={{ isOpen, toggleDrawer }}>
-      <div>{children}</div>
-    </DrawerContext.Provider>
-  );
+  return <DrawerContext.Provider value={{ isOpen, toggleDrawer }}>{children}</DrawerContext.Provider>;
 }
 
 const Trigger = ({ children }: PropsWithChildren) => {
@@ -30,7 +30,7 @@ const Body = ({ direction, children }: DrawerBodyProps) => {
   const { isOpen, toggleDrawer } = useContext(DrawerContext);
   return (
     <>
-      {isOpen ? <div onClick={toggleDrawer} className='absolute inset-0 bg-darker bg-opacity-[0.1]' /> : null}
+      {isOpen ? <div onClick={toggleDrawer} className='absolute inset-0 overflow-x-hidden bg-darker bg-opacity-[0.1]' /> : null}
       <div
         className={`${direction === 'right' ? 'right-0' : ''} absolute bottom-0 top-0 w-[200px] bg-bright p-[20px] transition-transform duration-300 ease-in-out ${isOpen ? `${direction === 'left' ? '' : '-'}translate-x-0 transform` : `${direction === 'left' ? '-' : ''}translate-x-full transform`}`}
       >
@@ -47,8 +47,19 @@ const Body = ({ direction, children }: DrawerBodyProps) => {
   );
 };
 
-const Item = ({ children }: PropsWithChildren) => {
-  return <li>{children}</li>;
+const Item = ({ children, onClick }: DrawerItemProps) => {
+  const { toggleDrawer } = useContext(DrawerContext);
+  return (
+    <li
+      className={`w-full border-b-[1px] border-b-middle py-[15px] text-center ${onClick ? 'cursor-pointer' : 'cursor-default'}`}
+      onClick={() => {
+        if (onClick) onClick();
+        toggleDrawer();
+      }}
+    >
+      {children}
+    </li>
+  );
 };
 
 Drawer.Trigger = Trigger;
