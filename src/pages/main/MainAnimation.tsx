@@ -13,8 +13,20 @@ function MainAnimation() {
       >
         <img src={ico_wheel} alt='톱니' />
       </motion.span>
-      <motion.span className='difference absolute left-[50px] top-[216px] cursor-default text-[30px] font-black text-bright tablet:text-[60px] desktop:text-[120px]'>CHOI SOO HYEONG</motion.span>
-      <motion.span className='difference absolute left-[50px] top-[330px] cursor-default text-[20px] font-black text-bright tablet:text-[60px] desktop:text-[80px]'>PORTFOLIO</motion.span>
+      <motion.span
+        transition={{ duration: 0.5, delay: 0.5 }}
+        animate={{ x: [200, 200, 0], opacity: [0, 0, 1] }}
+        className='difference absolute left-[50px] top-[216px] cursor-default text-[30px] font-black text-bright tablet:text-[60px] desktop:text-[120px]'
+      >
+        CHOI SOO HYEONG
+      </motion.span>
+      <motion.span
+        transition={{ duration: 0.5, delay: 0.9 }}
+        animate={{ x: [-100, -100, -100, 0], opacity: [0, 0, 0, 1] }}
+        className='difference absolute left-[50px] top-[330px] cursor-default text-[20px] font-black text-bright tablet:text-[60px] desktop:text-[80px]'
+      >
+        PORTFOLIO
+      </motion.span>
     </div>
   );
 }
