@@ -8,7 +8,7 @@ function MainAnimation() {
       <motion.span
         transition={{ duration: 1.5, ease: 'easeInOut' }}
         initial={{ x: '-50%', y: '-50%', rotate: 0 }}
-        animate={{ rotate: [0, 50, -180, 0] }}
+        animate={{ rotate: [0, 50, -180, 0], opacity: [0, 1, 1, 1] }}
         className='absolute left-1/2 top-1/2 w-[350px]'
       >
         <img src={ico_wheel} alt='톱니' />
