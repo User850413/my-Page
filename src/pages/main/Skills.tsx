@@ -5,13 +5,16 @@ import ico_box from '../../assets/icons/ico_box.svg';
 import SkillGraph from './SkillGraph';
 
 const SKILLS: SkillGraphProps[] = [
+  { skill: 'HTML5', percent: 80 },
+  { skill: 'CSS', percent: 80 },
   { skill: 'Javascript', percent: 60 },
   { skill: 'React', percent: 60 },
+  { skill: 'Typescript', percent: 60 },
 ];
 
 function Skills() {
   return (
-    <section className='mx-auto mt-[130px] flex h-[1400px] w-[320px] flex-col items-center gap-[40px] pt-[158px] tablet:w-[688px] tablet:gap-[158px] desktop:w-[800px]'>
+    <section className='mx-auto mb-[260px] mt-[130px] flex w-[320px] flex-col items-center gap-[40px] pt-[158px] tablet:w-[688px] tablet:gap-[158px] desktop:w-[800px]'>
       <motion.span
         initial={{ opacity: 0, y: -10 }}
         whileInView={{ opacity: 1, y: 0 }}
