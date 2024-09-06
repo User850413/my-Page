@@ -9,14 +9,14 @@ function SkillGraph({ skill, percent }: SkillGraphProps) {
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.5, duration: 0.8 }}
       viewport={{ once: true }}
-      className='group relative z-10 flex w-full cursor-default flex-col items-start'
+      className='group relative z-20 flex w-full cursor-default flex-col items-start'
     >
       <span className='text-[20px] tablet:text-[40px]'>{skill}</span>
       <span className='relative h-[6px] w-full border-[1px] border-darker bg-bright tablet:h-[12px]'>
         <motion.span initial={{ width: 0 }} whileInView={{ width: `${percent}%` }} transition={{ delay: 0.8 }} viewport={{ once: true }} className='absolute left-0 top-0 h-full bg-darker' />
         <span
           style={{ left: `${percent}%` }}
-          className='absolute top-[-40px] z-[5] rounded-[5px] border-[1px] border-darker bg-bright p-[5px_15px] opacity-0 transition-opacity duration-100 group-hover:opacity-100'
+          className='absolute top-[-40px] rounded-[5px] border-[1px] border-darker bg-bright p-[5px_15px] opacity-0 transition-opacity duration-100 group-hover:opacity-100'
         >
           {percent}%
         </span>

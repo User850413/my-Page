@@ -25,7 +25,7 @@ function Header() {
   const { pathname } = useLocation();
 
   return (
-    <div className='defaultShadow fixed left-0 right-0 top-0 z-10 flex h-[60px] items-center justify-between bg-bright px-[40px] tablet:h-[80px] tablet:px-[80px]'>
+    <div className='defaultShadow fixed left-0 right-0 top-0 z-30 flex h-[60px] items-center justify-between bg-bright px-[40px] tablet:h-[80px] tablet:px-[80px]'>
       <button onClick={() => navigate('/')}>
         <img src={ico_home} alt='메인으로' />
       </button>
