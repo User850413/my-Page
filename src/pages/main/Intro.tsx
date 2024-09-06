@@ -10,14 +10,20 @@ function Intro() {
         <span className='flex h-[80px] w-[80px] items-center justify-center rounded-full bg-bright tablet:h-[160px] tablet:w-[160px]'>
           <motion.img whileHover={{ scaleX: [1, 0, 1] }} initial={{ scaleX: 1 }} transition={{ duration: 1.5, ease: 'linear' }} className='h-[50px] tablet:h-[100px]' src={ico_star} alt='about' />
         </span>
-        <div className='flex flex-col items-center gap-[7px] text-bright tablet:gap-[14px] desktop:items-start desktop:gap-[4px]'>
+        <motion.div
+          initial={{ opacity: 0, x: 10 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className='flex flex-col items-center gap-[7px] text-bright tablet:gap-[14px] desktop:items-start desktop:gap-[4px]'
+        >
           <span className='w-fit border-b-[1px] border-b-bright text-[40px] font-thin tablet:text-[80px]'>ABOUT</span>
           <p className='w-[302px] break-keep text-center tablet:w-[466px] desktop:w-full desktop:text-left'>
             느리더라도 꾸준히 나아가는 개발자가 목표입니다.
             <br />
             설령 한 발자국이더라도 어제보다 나아간 오늘을, 오늘보다 나아간 내일을 살고 싶습니다.
           </p>
-        </div>
+        </motion.div>
       </div>
       <span className='absolute top-[-130px] h-[130px] w-[1920px] overflow-x-hidden border-l-[1px] border-darker'>
         <motion.img

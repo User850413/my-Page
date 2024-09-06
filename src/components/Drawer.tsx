@@ -32,7 +32,7 @@ const Body = ({ direction, children }: DrawerBodyProps) => {
     <>
       {isOpen ? <div onClick={toggleDrawer} className='absolute inset-0 overflow-x-hidden bg-darker bg-opacity-[0.1]' /> : null}
       <div
-        className={`${direction === 'right' ? 'right-0' : ''} absolute bottom-0 top-0 w-[200px] bg-bright p-[20px] transition-transform duration-300 ease-in-out ${isOpen ? `${direction === 'left' ? '' : '-'}translate-x-0 transform` : `${direction === 'left' ? '-' : ''}translate-x-full transform`}`}
+        className={`${direction === 'right' ? 'right-0' : ''} absolute bottom-0 top-0 w-[200px] bg-red-300 p-[20px] transition-transform duration-300 ease-in-out ${isOpen ? `${direction === 'left' ? '' : '-'}translate-x-0 transform` : `${direction === 'left' ? '-' : ''}translate-x-full transform`}`}
       >
         <div className='flex w-full flex-col'>
           <span className={`${direction === 'left' ? 'ml-auto' : 'mr-auto'}`}>
