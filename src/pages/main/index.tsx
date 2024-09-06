@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import { RotationWheelLeft, RotationWheelRight } from '../../components/RotationWheel';
 import Intro from './Intro';
 import MainAnimation from './MainAnimation';
@@ -9,11 +11,16 @@ export interface SkillGraphProps {
 }
 
 function Main() {
+  const navigate = useNavigate();
+
   return (
     <div className='relative w-screen overflow-hidden'>
       <MainAnimation />
       <Intro />
       <Skills />
+      <a onClick={() => navigate('/projects')} className='absolute bottom-[94px] left-1/2 z-10 -translate-x-1/2 transform cursor-pointer text-[24px] font-light hover:underline'>
+        want to see my works?
+      </a>
       <RotationWheelRight top={176} right={-66} />
       <RotationWheelLeft top={950} left={-81} />
       <RotationWheelRight top={'calc(100% - 700px)'} right={0} />

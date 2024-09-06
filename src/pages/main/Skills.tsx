@@ -14,7 +14,7 @@ const SKILLS: SkillGraphProps[] = [
 
 function Skills() {
   return (
-    <section className='mx-auto mb-[260px] mt-[130px] flex w-[320px] flex-col items-center gap-[40px] pt-[158px] tablet:w-[688px] tablet:gap-[158px] desktop:w-[800px]'>
+    <section className='mx-auto mb-[380px] mt-[130px] flex w-[320px] flex-col items-center gap-[40px] pt-[158px] tablet:w-[688px] tablet:gap-[158px] desktop:w-[800px]'>
       <motion.span
         initial={{ opacity: 0, y: -10 }}
         whileInView={{ opacity: 1, y: 0 }}
