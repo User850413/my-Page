@@ -18,7 +18,7 @@ interface TitleProps {
 
 interface DescLabelProps extends PropsWithChildren {
   text: string;
-  flex: string;
+  direct: string;
 }
 
 const ToolIcon = ({ tool }: { tool: string }) => {
@@ -67,11 +67,11 @@ const ProjectTitleCard = ({ title, startDate, lastDate, tools }: TitleProps) => 
   );
 };
 
-const DescLabel = ({ text, flex: direct, children }: DescLabelProps) => {
+const DescLabel = ({ text, direct, children }: DescLabelProps) => {
   return (
     <div className={`flex gap-[10px] ${direct}`}>
       <span className='w-fit rounded-[4px] bg-middle p-[6px_12px] text-[18px] tablet:text-[24px] desktop:text-[32px]'>{text}</span>
-      <div className={`text-[18px] font-light tablet:text-[24px] desktop:text-[32px] ${direct == 'row' ? 'mt-[6px]' : ''}`}>{children}</div>
+      <div className={`text-[18px] font-light tablet:text-[24px] desktop:text-[32px] ${direct.includes('flex-row') ? 'mt-[6px]' : ''}`}>{children}</div>
     </div>
   );
 };
@@ -90,17 +90,17 @@ const ProjectContentCard = ({ title, startDate, lastDate, tools, point, descript
       <div className='flex flex-col items-start gap-[20px]'>
         <div className='flex w-full flex-col items-start gap-[20px] desktop:flex-row'>
           <div className='flex flex-1 flex-col items-start gap-[20px]'>
-            <DescLabel text='기간' flex='flex-row'>
+            <DescLabel text='기간' direct='flex-row'>
               <div>
                 {startDate} - {lastDate}
               </div>
             </DescLabel>
-            <DescLabel text='특징' flex='flex-row'>
+            <DescLabel text='특징' direct='flex-row'>
               <div>{point}</div>
             </DescLabel>
           </div>
           <div className='flex-1 desktop:border-l-[1px] desktop:border-l-middle desktop:pl-[30px]'>
-            <DescLabel text='사용 기술' flex='flex-col'>
+            <DescLabel text='사용 기술' direct='flex-col'>
               <ul className='flex gap-[9px]'>
                 {tools.map((tool, index) => (
                   <li key={index} className='h-[40px] w-[40px] tablet:h-[80px] tablet:w-[80px]'>
@@ -111,7 +111,7 @@ const ProjectContentCard = ({ title, startDate, lastDate, tools, point, descript
             </DescLabel>
           </div>
         </div>
-        <DescLabel text='설명' flex='flex-col'>
+        <DescLabel text='설명' direct='flex-col'>
           <div>{description}</div>
         </DescLabel>
       </div>
