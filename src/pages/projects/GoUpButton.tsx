@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import ico_goToTop from '../../assets/icons/ico_goToTop.svg';
+import { RotationWheelLeft } from '../../components/RotationWheel';
 
 function GoUpButton() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -26,8 +27,11 @@ function GoUpButton() {
 
   if (isVisible) {
     return (
-      <button onClick={goToTop} className='fixed bottom-[40px] right-[40px] flex h-[40px] w-[40px] items-center justify-center rounded-full bg-darker tablet:h-[60px] tablet:w-[60px]'>
-        <img src={ico_goToTop} className='h-[20px] tablet:h-[30px]' alt='가장 위로' />
+      <button onClick={goToTop} className='group fixed bottom-[40px] right-[40px] flex h-[40px] w-[40px] items-center justify-center rounded-full bg-darker tablet:h-[60px] tablet:w-[60px]'>
+        <img src={ico_goToTop} className='hidden h-[20px] group-hover:block tablet:h-[30px]' alt='가장 위로' />
+        <span className='relative h-[60%] w-[60%] group-hover:hidden'>
+          <RotationWheelLeft white />
+        </span>
       </button>
     );
   } else {

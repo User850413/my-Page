@@ -18,7 +18,7 @@ function Main() {
       <MainAnimation />
       <Intro />
       <Skills />
-      <a onClick={() => navigate('/projects')} className='absolute bottom-[94px] left-1/2 z-10 -translate-x-1/2 transform cursor-pointer text-[24px] font-light hover:underline'>
+      <a onClick={() => navigate('/projects')} className='absolute bottom-[94px] left-1/2 z-10 -translate-x-1/2 transform cursor-pointer text-[18px] font-light hover:underline tablet:text-[24px]'>
         want to see my works?
       </a>
       <RotationWheelRight top={176} right={-66} />

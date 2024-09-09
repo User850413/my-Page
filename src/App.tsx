@@ -1,8 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
+
+import Layout from './layout/Layout';
+import Contact from './pages/contact';
 import Main from './pages/main';
 import Projects from './pages/projects';
-import Layout from './layout/Layout';
-import Contact from './pages/connections';
 
 function App() {
   return (

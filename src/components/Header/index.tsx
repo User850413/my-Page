@@ -14,7 +14,11 @@ const MENUS: { label: string; url: string }[] = [
 
 const MenuButton = ({ buttonText, isNow, onClick }: { buttonText: string; isNow: boolean; onClick: () => void }) => {
   return (
-    <button onClick={onClick} disabled={isNow} className={`min-w-[104px] rounded-[5px] p-[13px_17px] text-[16px] ${isNow ? 'bg-darker text-bright' : 'bg-middle hover:bg-middleDarker'}`}>
+    <button
+      onClick={onClick}
+      disabled={isNow}
+      className={`min-w-[104px] rounded-[5px] border-[1px] p-[13px_17px] text-[16px] text-darkerText transition-all ${isNow ? 'border-darker' : 'hover:border-darker'}`}
+    >
       {buttonText}
     </button>
   );
