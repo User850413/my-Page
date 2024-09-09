@@ -43,7 +43,7 @@ const Title = ({ id, children }: ItemProps) => {
 const Content = ({ id, children }: ItemProps) => {
   const { selected } = useContext(AccordionContext);
 
-  return <div className={`transition-max-height overflow-hidden duration-500 ease-in-out ${id == selected ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>{children}</div>;
+  return <div className={`transform transition-all duration-500 ease-in-out ${id == selected ? 'block translate-y-0' : 'hidden translate-y-[-300px]'}`}>{children}</div>;
 };
 
 Accordion.Title = Title;
