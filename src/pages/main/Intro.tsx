@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
-import ico_star from '../../assets/icons/ico_star.svg';
-import img_bg_pattern from '../../assets/images/img_bg_pattern.svg';
+import ico_star from '/assets/icons/ico_star.svg';
+import img_bg_pattern from '/assets/images/img_bg_pattern.svg';
 
 function Intro() {
   return (

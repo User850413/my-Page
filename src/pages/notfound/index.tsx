@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
-import ico_wheel from '../../assets/icons/ico_wheel.svg';
+import ico_wheel from '/assets/icons/ico_wheel.svg';
 
 function NotFound() {
   const navigate = useNavigate();

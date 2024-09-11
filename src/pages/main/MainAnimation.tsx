@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-import ico_wheel from '../../assets/icons/ico_wheel.svg';
+import ico_wheel from '/assets/icons/ico_wheel.svg';
 
 function MainAnimation() {
   return (

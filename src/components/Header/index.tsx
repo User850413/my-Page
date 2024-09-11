@@ -1,11 +1,11 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import ico_home from '../../assets/icons/ico_home.svg';
-import ico_menu from '../../assets/icons/ico_menu.svg';
-import ico_wheel from '../../assets/icons/ico_wheel.svg';
 import Drawer from '../Drawer';
 import Menu from '../Menu';
 import { ThemeSelection } from './Selection';
+import ico_home from '/assets/icons/ico_home.svg';
+import ico_menu from '/assets/icons/ico_menu.svg';
+import ico_wheel from '/assets/icons/ico_wheel.svg';
 
 const MENUS: { label: string; url: string }[] = [
   { label: '프로젝트', url: '/projects' },

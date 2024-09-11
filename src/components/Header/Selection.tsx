@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
-import ico_arrow_left from '../../assets/icons/ico_arrow_left.svg';
-import ico_arrow_right from '../../assets/icons/ico_arrow_right.svg';
-import ico_moon from '../../assets/icons/ico_moon.svg';
-import ico_sun from '../../assets/icons/ico_sun.svg';
+import ico_arrow_left from '/assets/icons/ico_arrow_left.svg';
+import ico_arrow_right from '/assets/icons/ico_arrow_right.svg';
+import ico_moon from '/assets/icons/ico_moon.svg';
+import ico_sun from '/assets/icons/ico_sun.svg';
 
 interface SelectionAttributes {
   id: number;

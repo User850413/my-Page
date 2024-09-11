@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-import ico_wheel_big from '../assets/icons/ico_wheel_big.svg';
-import ico_wheel_white from '../assets/icons/ico_wheel_white.svg';
+import ico_wheel_big from '/assets/icons/ico_wheel_big.svg';
+import ico_wheel_white from '/assets/icons/ico_wheel_white.svg';
 
 function RotationWheelLeft({ top, left, white = false }: { top?: number | string; left?: number | string; white?: boolean }) {
   const { scrollY } = useScroll();

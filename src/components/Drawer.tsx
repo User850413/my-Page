@@ -1,6 +1,6 @@
 import { PropsWithChildren, createContext, useContext, useState } from 'react';
 
-import ico_xIcon from '../assets/icons/ico_xIcon.svg';
+import ico_xIcon from '/assets/icons/ico_xIcon.svg';
 
 interface DrawerBodyProps extends PropsWithChildren {
   direction: 'left' | 'right';

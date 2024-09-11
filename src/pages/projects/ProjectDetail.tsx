@@ -1,14 +1,14 @@
 import { PropsWithChildren } from 'react';
 
-import ico_React from '../../assets/icons/ico_React.svg';
-import ico_bolt from '../../assets/icons/ico_bolt.svg';
-import ico_framer_motion from '../../assets/icons/ico_framer_motion.svg';
-import ico_js from '../../assets/icons/ico_js.svg';
-import ico_mantine from '../../assets/icons/ico_mantine.svg';
-import ico_next from '../../assets/icons/ico_next.svg';
-import ico_tailwind from '../../assets/icons/ico_tailwind.svg';
-import ico_ts from '../../assets/icons/ico_ts.svg';
 import { ProjectsProps } from '../../constants/projects';
+import ico_bolt from '/assets/icons/ico_bolt.svg';
+import ico_framer_motion from '/assets/icons/ico_framer_motion.svg';
+import ico_js from '/assets/icons/ico_js.svg';
+import ico_mantine from '/assets/icons/ico_mantine.svg';
+import ico_next from '/assets/icons/ico_next.svg';
+import ico_React from '/assets/icons/ico_react.svg';
+import ico_tailwind from '/assets/icons/ico_tailwind.svg';
+import ico_ts from '/assets/icons/ico_ts.svg';
 
 interface TitleProps {
   title: string;
@@ -38,7 +38,7 @@ const ToolIcon = ({ tool }: { tool: string }) => {
 };
 
 const ProjectTitleCard = ({ title, startDate, lastDate, tools, thumbnail }: TitleProps) => {
-  const thumbnailImage = `/images/${thumbnail}`;
+  const thumbnailImage = `assets/images/${thumbnail}`;
 
   return (
     <div className='group relative mx-auto flex w-[266px] flex-col gap-[10px] py-[10px] tablet:w-[698px] tablet:flex-row tablet:gap-[30px] tablet:border-b-[1px] tablet:border-b-middle tablet:py-[56px] tablet:pl-[67px] desktop:w-[1200px] desktop:gap-[40px] desktop:py-[74px] desktop:pl-[98px]'>
@@ -91,7 +91,7 @@ const ProjectContentCard = ({ title, startDate, lastDate, tools, point, descript
     window.open(url, '_blank');
   };
 
-  const thumbnailImage = `/images/${thumbnail}`;
+  const thumbnailImage = `assets/images/${thumbnail}`;
 
   return (
     <div className='relative py-[10px] after:absolute after:left-1/2 after:block after:w-[166px] after:-translate-x-1/2 after:border-b-[1px] after:border-middle tablet:mt-[40px] tablet:py-0 tablet:after:w-[264px] desktop:mt-[200px] desktop:after:w-full'>

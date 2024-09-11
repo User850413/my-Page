@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 
 import { SkillGraphProps } from '.';
-import ico_box from '../../assets/icons/ico_box.svg';
 import SkillGraph from './SkillGraph';
+import ico_box from '/assets/icons/ico_box.svg';
 
 const SKILLS: SkillGraphProps[] = [
   { skill: 'HTML5', percent: 80 },

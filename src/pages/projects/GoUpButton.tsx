@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import ico_goToTop from '../../assets/icons/ico_goToTop.svg';
 import { RotationWheelLeft } from '../../components/RotationWheel';
+import ico_goToTop from '/assets/icons/ico_goToTop.svg';
 
 function GoUpButton() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
