@@ -12,13 +12,13 @@ function Projects() {
       <h1 className='mx-auto mb-[50px] mt-[80px] w-fit cursor-default text-[30px] font-black underline tablet:mt-[138px] tablet:text-[40px] desktop:mb-[90px] desktop:text-[60px]'>PROJECTS</h1>
       <div className='mx-auto w-fit'>
         <Accordion>
-          {PROJECTS.map(({ title, lastDate, startDate, description, tools, point, id, URL }) => (
+          {PROJECTS.map(({ title, lastDate, startDate, description, tools, point, id, URL, site, thumbnail }) => (
             <div className='w-min' key={id}>
               <Accordion.Title id={id}>
-                <ProjectTitleCard title={title} lastDate={lastDate} startDate={startDate} tools={tools} />
+                <ProjectTitleCard title={title} lastDate={lastDate} startDate={startDate} tools={tools} thumbnail={thumbnail} />
               </Accordion.Title>
               <Accordion.Content id={id}>
-                <ProjectContentCard id={id} title={title} lastDate={lastDate} startDate={startDate} tools={tools} description={description} point={point} URL={URL} />
+                <ProjectContentCard id={id} title={title} lastDate={lastDate} startDate={startDate} tools={tools} description={description} point={point} URL={URL} site={site} thumbnail={thumbnail} />
               </Accordion.Content>
             </div>
           ))}

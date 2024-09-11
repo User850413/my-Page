@@ -13,6 +13,7 @@ export default {
         darkerText: '#222222',
         middle: '#D9D9D9',
         middleDarker: '#C2C2C2',
+        middleLighter: '#EEEEEE',
       },
     },
   },

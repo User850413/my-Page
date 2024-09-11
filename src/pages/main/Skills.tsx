@@ -10,6 +10,7 @@ const SKILLS: SkillGraphProps[] = [
   { skill: 'Javascript', percent: 60 },
   { skill: 'React', percent: 60 },
   { skill: 'Typescript', percent: 60 },
+  { skill: 'HTTP', percent: 20 },
 ];
 
 function Skills() {
