@@ -63,9 +63,9 @@ const ProjectTitleCard = ({ title, startDate, lastDate, tools, thumbnail }: Titl
             {startDate} - {lastDate}
           </span>
         </div>
-        <ul className='hidden items-center gap-[15px] tablet:flex'>
+        <ul className='hidden items-center gap-[15px] overflow-x-hidden tablet:flex tablet:max-w-[285px] desktop:max-w-[650px]'>
           {tools.map((tool, index) => (
-            <li key={index} className='h-[60px] w-[60px] desktop:h-[80px] desktop:w-[80px]'>
+            <li key={index} className='h-[60px] w-[60px] flex-shrink-0 desktop:h-[80px] desktop:w-[80px]'>
               <ToolIcon tool={tool} />
             </li>
           ))}
@@ -78,10 +78,12 @@ const ProjectTitleCard = ({ title, startDate, lastDate, tools, thumbnail }: Titl
 const DescLabel = ({ text, direct, children }: DescLabelProps) => {
   return (
     <div className={`flex gap-[8px] ${direct}`}>
-      <span className='h-fit w-fit flex-shrink-0 rounded-[4px] bg-middle p-[6px_12px] text-[18px] tablet:text-[24px] desktop:text-[32px]'>{text}</span>
-      <div className={`h-fit w-fit rounded-[4px] bg-middleLighter p-[6px_12px] text-[14px] font-light tablet:text-[20px] desktop:text-[28px] ${direct.includes('flex-row') ? 'mt-[4px]' : ''}`}>
-        {children}
-      </div>
+      <span
+        className={`relative ${direct.includes('flex-row') ? 'after:right-0 after:h-[80%]' : 'after:bottom-0 after:left-1/2 after:w-[80%] after:-translate-x-1/2 after:transform'} h-fit w-fit flex-shrink-0 rounded-[4px] p-[6px_12px] text-[18px] after:absolute after:border-[1px] after:border-middleDarker tablet:text-[24px] desktop:text-[32px]`}
+      >
+        {text}
+      </span>
+      <div className={`h-fit w-fit rounded-[4px] p-[6px_12px] text-[14px] font-light tablet:text-[20px] desktop:text-[28px] ${direct.includes('flex-row') ? 'mt-[4px]' : ''}`}>{children}</div>
     </div>
   );
 };
@@ -94,10 +96,10 @@ const ProjectContentCard = ({ title, startDate, lastDate, tools, point, descript
   const thumbnailImage = `assets/images/${thumbnail}`;
 
   return (
-    <div className='relative py-[10px] after:absolute after:left-1/2 after:block after:w-[166px] after:-translate-x-1/2 after:border-b-[1px] after:border-middle tablet:mt-[40px] tablet:py-0 tablet:after:w-[264px] desktop:mt-[200px] desktop:after:w-full'>
+    <div className='relative py-[10px] after:absolute after:left-1/2 after:block after:w-[166px] after:-translate-x-1/2 after:border-b-[1px] after:border-middleDarker tablet:mt-[100px] tablet:py-0 tablet:after:w-[264px] desktop:mt-[200px] desktop:after:w-[80%]'>
       <div
         onClick={() => navigateToLink(site)}
-        className='mx-auto h-[160px] w-[266px] cursor-pointer border-[1px] border-middle tablet:h-[342px] tablet:w-[608px] desktop:h-[524px] desktop:w-[930px]'
+        className='relative mx-auto mt-[15px] h-[160px] w-[266px] cursor-pointer border-[1px] border-middle after:absolute after:left-1/2 after:top-[-15px] after:block after:w-[166px] after:-translate-x-1/2 after:border-t-[1px] after:border-middleDarker tablet:h-[342px] tablet:w-[608px] tablet:after:w-[264px] desktop:h-[524px] desktop:w-[930px] desktop:after:top-[-30px] desktop:after:w-[80%]'
         style={{ backgroundImage: `url(${thumbnailImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
       />
       <h2 className='mx-auto mb-[25px] mt-[10px] w-fit text-[20px] tablet:mt-[20px] tablet:text-[40px] desktop:mb-[40px] desktop:mt-[100px] desktop:text-[60px]'>{title}</h2>
@@ -121,8 +123,9 @@ const ProjectContentCard = ({ title, startDate, lastDate, tools, point, descript
             <DescLabel text='사용 기술' direct='flex-col'>
               <ul className='flex gap-[9px]'>
                 {tools.map((tool, index) => (
-                  <li key={index} className='h-[40px] w-[40px] tablet:h-[80px] tablet:w-[80px]'>
+                  <li key={index} className='group relative h-[40px] w-[40px] rounded-[5px] tablet:h-[80px] tablet:w-[80px]'>
                     <ToolIcon tool={tool} />
+                    <span className='absolute bottom-[100%] left-1/2 mb-[3px] hidden -translate-x-1/2 rounded-[5px] border-[1px] border-middle bg-white p-[3px_10px] group-hover:block'>{tool}</span>
                   </li>
                 ))}
               </ul>
@@ -134,7 +137,7 @@ const ProjectContentCard = ({ title, startDate, lastDate, tools, point, descript
         </DescLabel>
       </div>
       <a
-        className='mx-auto mb-[10px] mt-[60px] block w-fit cursor-pointer rounded-[50px] bg-middle px-[21px] py-[8px] text-[18px] hover:bg-middleDarker tablet:mb-[30px] tablet:mt-[100px] tablet:px-[40px] tablet:text-[24px] desktop:mb-[40px] desktop:mt-[200px] desktop:px-[50px] desktop:text-[32px]'
+        className='mx-auto mb-[10px] mt-[60px] block w-fit cursor-pointer rounded-[50px] bg-darker px-[21px] py-[8px] text-[18px] text-middleLighter hover:bg-middleDarker hover:text-darkerText tablet:mb-[30px] tablet:mt-[100px] tablet:px-[40px] tablet:text-[24px] desktop:mb-[40px] desktop:mt-[200px] desktop:px-[50px] desktop:text-[32px]'
         onClick={() => navigateToLink(URL)}
       >
         GitHub
