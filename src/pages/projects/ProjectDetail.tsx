@@ -79,7 +79,7 @@ const DescLabel = ({ text, direct, children }: DescLabelProps) => {
   return (
     <div className={`flex gap-[8px] ${direct}`}>
       <span className='h-fit w-fit flex-shrink-0 rounded-[4px] bg-middle p-[6px_12px] text-[18px] tablet:text-[24px] desktop:text-[32px]'>{text}</span>
-      <div className={`bg-middleLighter h-fit w-fit rounded-[4px] p-[6px_12px] text-[14px] font-light tablet:text-[20px] desktop:text-[28px] ${direct.includes('flex-row') ? 'mt-[4px]' : ''}`}>
+      <div className={`h-fit w-fit rounded-[4px] bg-middleLighter p-[6px_12px] text-[14px] font-light tablet:text-[20px] desktop:text-[28px] ${direct.includes('flex-row') ? 'mt-[4px]' : ''}`}>
         {children}
       </div>
     </div>
