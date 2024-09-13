@@ -41,17 +41,7 @@ const ProjectTitleCard = ({ title, startDate, lastDate, tools, thumbnail }: Titl
   const thumbnailImage = `assets/images/${thumbnail}`;
 
   return (
-    <div className='group relative mx-auto flex w-[266px] flex-col gap-[10px] py-[10px] tablet:w-[698px] tablet:flex-row tablet:gap-[30px] tablet:border-b-[1px] tablet:border-b-middle tablet:py-[56px] tablet:pl-[67px] desktop:w-[1200px] desktop:gap-[40px] desktop:py-[74px] desktop:pl-[98px]'>
-      <img
-        src={ico_bolt}
-        alt='볼트 이미지'
-        className='absolute left-0 top-[188px] w-[16px] -translate-y-1/2 transition-all group-hover:w-[20px] group-hover:rotate-90 tablet:top-1/2 tablet:w-[25px] group-hover:tablet:w-[30px] desktop:w-[40px] group-hover:desktop:w-[60px]'
-      />
-      <img
-        src={ico_bolt}
-        alt='볼트 이미지'
-        className='absolute right-0 top-[188px] w-[16px] -translate-y-1/2 transition-all group-hover:w-[20px] group-hover:rotate-90 tablet:top-1/2 tablet:w-[25px] group-hover:tablet:w-[30px] desktop:w-[40px] group-hover:desktop:w-[60px]'
-      />
+    <div className='group relative mx-auto flex w-[266px] flex-col justify-start gap-[10px] py-[10px] hover:bg-middleLighter tablet:w-[698px] tablet:flex-row tablet:gap-[30px] tablet:border-b-[1px] tablet:border-b-middle tablet:py-[56px] tablet:pl-[37px] desktop:w-[1200px] desktop:gap-[40px] desktop:py-[74px] desktop:pl-[68px]'>
       <div
         className='h-[160px] w-[266px] border-[1px] border-middle desktop:h-[202px] desktop:w-[336px]'
         style={{ backgroundImage: `url(${thumbnailImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
